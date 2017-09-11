@@ -1,0 +1,12 @@
+import numpy as np
+arr=np.array([[1,2],[3,4],[5,6],[7,8],[9,9.35],[8.6,5.35]])
+drr=np.array([[1.2,2.1],[2.3,23.4],[23.3,34.4],[33.43,34],[3,554.5],[45.65,4.7]])
+print(np.mean(arr[:,1]))
+print(np.median(arr))
+print(np.abs(arr))
+np.absolute(arr)
+print(np.std(arr[:,1]))
+a=np.array((1,2,3))
+b=np.array((4,3,6))
+c=np.column_stack((a,b))
+print(c)
