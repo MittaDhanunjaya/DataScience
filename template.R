@@ -32,3 +32,4 @@ testing_set=subset(dataset,split==FALSE)
                        #it would be very dominating.
 training_set[,2:3]=scale(training_set[,2:3])
 testing_set[,2:3]=scale(testing_set[,2:3])
+#Generally we don't have to use take care of missing elements, scaling and encoding.
