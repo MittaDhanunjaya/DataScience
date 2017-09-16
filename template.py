@@ -15,3 +15,13 @@ imputer =Imputer(missing_values='NaN', strategy='mean', axis=0, verbose=0, copy=
 #axis=0 for column wise mean and 1 for row wise mean
 imputer=imputer.fit(X[:, 1:3])
 X[:, 1:3]= imputer.transform(X[:,1:3])
+#we have successfully filled up the missing elements and now we have to encode the country and dependent variables
+#Since, age and salary doesn't effect the whole 
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+labelencoder_X= LabelEncoder()
+X[:,0]=labelencoder_X.fit_transform(X[:,0]) #Now we have encoded the entire country column into numbers but this is not we need.
+#we are not going to convey that the higher number indicates the larger country. So, we need to encode this into a matrix. 
+onehotencoder= OneHotEncoder(categorical_features=[0])
+X= onehotencoder.fit_transform(X).toarray()
+labelencoder_Y= LabelEncoder()
+Y= labelencoder_Y.fit_transform(Y)
