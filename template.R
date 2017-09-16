@@ -11,3 +11,11 @@ dataset$Age = ifelse(is.na(dataset$Age),
 dataset$Salary= ifelse(is.na(dataset$Salary),
                        ave(dataset$Salary,FUN= function(y) mean(y,na.rm=TRUE)),
                        dataset$Salary)
+#Its time to encode the dependent elements into numbers as we have to apply mathematical equations on numbers.
+dataset$Country= factor(dataset$Country,
+                       levels=c('France', 'Spain', 'Germany')
+                       labels=c(1,2,3))
+#factor is used to encode the given set of elements(i.e., listed in levels) into numbers(i.e., listed in labels)
+dataset$Purchased= factor(dataset$Purchased,
+                         levels=c('No','Yes'),
+                         labels=c(0,1))                       
