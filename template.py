@@ -25,3 +25,7 @@ onehotencoder= OneHotEncoder(categorical_features=[0])
 X= onehotencoder.fit_transform(X).toarray()
 labelencoder_Y= LabelEncoder()
 Y= labelencoder_Y.fit_transform(Y)
+#Now we have to split the table into training sets and testing sets.
+# Since we are doing it in a machine learning we have to train the machine and test it to the results.
+from sklearn.cross_validation import train_test_split
+X_training,X_testing,Y_training,Y_testing = train_test_split(X,Y,test_size=0.2,random_state=0)
