@@ -29,3 +29,9 @@ Y= labelencoder_Y.fit_transform(Y)
 # Since we are doing it in a machine learning we have to train the machine and test it to the results.
 from sklearn.cross_validation import train_test_split
 X_training,X_testing,Y_training,Y_testing = train_test_split(X,Y,test_size=0.2,random_state=0)
+#Now we have to scale the elements to make comparitive.
+#feature scaling
+from sklearn.preprocessing import StandardScaler
+sc_X= StandardScaler()
+X_train=sc_X.fit_transform(X_train)
+X_test=sc_X.transform(X_test)
