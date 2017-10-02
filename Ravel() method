@@ -1,0 +1,9 @@
+The ravel() method restructures your arrays into the proper format expected by the np.array() class. More precisely, it flattens your array into a 1D array.
+For example, if
+x = np.array([[1, 2], [3, 4]])
+then 
+x.ravel() = [1, 2, 3, 4]
+It's just necessary to do that so that we don't get format errors.
+.T takes the transpose of your matrix. So you add this .T at the end to get a vector. Another format purpose.
+
+The zig zag line is supposed to be a straight line. It looks this way due to low monitor resolution. 
